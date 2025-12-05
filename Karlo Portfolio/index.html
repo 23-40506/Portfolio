@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlo Ronquillo | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --gray-color: #bdc3c7;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+
+        .btn-accent:hover {
+            background-color: #c0392b;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-list {
+            display: flex;
+        }
+
+        .nav-list li {
+            margin-left: 2rem;
+        }
+
+        .nav-list a {
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 100px;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.1) 0%, rgba(52, 152, 219, 0.05) 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .skills {
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: var(--gray-color);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Projects Section */
+        .projects {
+            background-color: rgba(44, 62, 80, 0.05);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            color: var(--primary-color);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        .project-tags span {
+            background-color: var(--gray-color);
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(44, 62, 80, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray-color);
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--gray-color);
+        }
+
+        .modal-header h3 {
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--accent-color);
+        }
+
+        .modal-body {
+            margin-bottom: 20px;
+        }
+
+        .modal-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            display: block;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-list {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                z-index: 999;
+            }
+
+            .nav-list.active {
+                left: 0;
+            }
+
+            .nav-list li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-text, .hero-image, 
+            .about-text, .about-image,
+            .contact-info, .contact-form {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+
+            .hero {
+                padding-top: 120px;
+                text-align: center;
+            }
+
+            .hero-content, .about-content, .contact-content {
+                flex-direction: column;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+            
+            .modal-content {
+                padding: 20px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .modal-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">Carlo<span>Ronquillo</span></a>
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Carlo Ronquillo</h1>
+                    <h2>Full Stack Developer & UI/UX Designer</h2>
+                    <p>I create beautiful, functional websites and applications with clean code and user-centered design. Passionate about solving problems through technology and delivering exceptional digital experiences.</p>
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-accent" style="margin-left: 10px;">Hire Me</a>
+                    <div class="social-links">
+                        <a href="https://github.com/23-40506" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://codepen.io" target="_blank"><i class="fab fa-codepen"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="17b214c5-8df4-4c16-af88-f25c73876e4b.jpg" alt="Carlo Ronquillo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Carlo, a passionate full-stack developer with over 5 years of experience creating digital solutions. I specialize in building responsive web applications with modern technologies like React, Node.js, and MongoDB.</p>
+                    <p>My journey in tech started with a Computer Science degree, and I've since worked with startups and established companies to deliver high-quality digital products that solve real-world problems.</p>
+                    <div class="skills">
+                        <h3>My Skills</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>HTML/CSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>JavaScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>React</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Node.js</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>MongoDB</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>UI/UX Design</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Carlo working">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <!-- Tourism Website Project -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80" alt="Tourism Website">
+                    </div>
+                    <div class="project-info">
+                        <h3>Modern Tourism Website</h3>
+                        <p>A fully functional tourism website with user authentication, booking system, and destination management.</p>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Responsive Design</span>
+                            <span>LocalStorage</span>
+                            <span>Booking System</span>
+                        </div>
+                        <button class="btn btn-accent view-project-btn" data-project="4">View Details</button>
+                        <a href="https://github.com/23-40506/Tourism-Web-Site.git" target="_blank" class="btn" style="margin-left: 10px;">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- E-commerce Project -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="E-commerce Website">
+                    </div>
+                    <div class="project-info">
+                        <h3>E-commerce Platform</h3>
+                        <p>A complete online shopping platform with product catalog, shopping cart, and user authentication.</p>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>E-commerce</span>
+                            <span>Cart System</span>
+                            <span>Product Filter</span>
+                        </div>
+                        <button class="btn btn-accent view-project-btn" data-project="5">View Details</button>
+                        <a href="https://github.com/23-40506/E-commerce.git" target="_blank" class="btn" style="margin-left: 10px;">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Original E-commerce Project -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="E-commerce Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Full Stack E-commerce</h3>
+                        <p>A full-featured online store with product catalog, shopping cart, and secure payment processing.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Stripe API</span>
+                        </div>
+                        <button class="btn btn-accent view-project-btn" data-project="1">View Details</button>
+                        <a href="https://github.com" target="_blank" class="btn" style="margin-left: 10px;">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Travel Planning App -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Travel App">
+                    </div>
+                    <div class="project-info">
+                        <h3>Travel Planning App</h3>
+                        <p>Mobile application for planning trips, booking accommodations, and discovering local attractions.</p>
+                        <div class="project-tags">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>Google Maps API</span>
+                        </div>
+                        <button class="btn btn-accent view-project-btn" data-project="2">View Details</button>
+                        <a href="https://github.com" target="_blank" class="btn" style="margin-left: 10px;">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Task Management System -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Task Manager">
+                    </div>
+                    <div class="project-info">
+                        <h3>Task Management System</h3>
+                        <p>A collaborative tool for teams to manage projects, assign tasks, and track progress in real-time.</p>
+                        <div class="project-tags">
+                            <span>Vue.js</span>
+                            <span>Express</span>
+                            <span>Socket.io</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <button class="btn btn-accent view-project-btn" data-project="3">View Details</button>
+                        <a href="https://github.com" target="_blank" class="btn" style="margin-left: 10px;">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Manila, Philippines</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+63 912 345 6789</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@carloronquillo.dev</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Availability</h4>
+                            <p>Available for freelance projects</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-file-download"></i>
+                        </div>
+                        <div>
+                            <h4>Resume</h4>
+                            <p>
+                                <a href="#" class="btn download-resume-btn" style="padding: 8px 16px; font-size: 0.9rem;">
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Project Inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Hello, I'd like to discuss a project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                        <button type="button" class="btn btn-accent" id="scheduleCallBtn" style="margin-left: 10px;">
+                            <i class="fas fa-calendar"></i> Schedule a Call
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">Carlo<span>Ronquillo</span></div>
+                    <p>Creating digital experiences that make a difference. Let's build something amazing together.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Me</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/23-40506" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://codepen.io" target="_blank"><i class="fab fa-codepen"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Carlo Ronquillo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <div id="projectModal1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Full Stack E-commerce</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="E-commerce Project" class="modal-image">
+                <h4>Project Overview</h4>
+                <p>This is a full-featured e-commerce platform built with modern web technologies. The platform includes a complete product catalog, shopping cart functionality, user authentication, and secure payment processing via Stripe.</p>
+                
+                <h4>Technologies Used</h4>
+                <ul>
+                    <li>React.js for the frontend</li>
+                    <li>Node.js with Express for the backend</li>
+                    <li>MongoDB for database management</li>
+                    <li>Stripe API for payment processing</li>
+                    <li>JWT for authentication</li>
+                </ul>
+                
+                <h4>Key Features</h4>
+                <ul>
+                    <li>Responsive design for all devices</li>
+                    <li>Product search and filtering</li>
+                    <li>User reviews and ratings</li>
+                    <li>Admin dashboard for product management</li>
+                    <li>Order tracking and history</li>
+                </ul>
+                
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <a href="https://github.com" target="_blank" class="btn">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <a href="https://demo-ecommerce.com" target="_blank" class="btn btn-accent">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="projectModal2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Travel Planning App</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Travel App" class="modal-image">
+                <h4>Project Overview</h4>
+                <p>A mobile application designed to help travelers plan their trips efficiently. The app provides features for discovering destinations, booking accommodations, and creating detailed itineraries.</p>
+                
+                <h4>Technologies Used</h4>
+                <ul>
+                    <li>React Native for cross-platform mobile development</li>
+                    <li>Firebase for backend services and authentication</li>
+                    <li>Google Maps API for location services</li>
+                    <li>Redux for state management</li>
+                </ul>
+                
+                <h4>Key Features</h4>
+                <ul>
+                    <li>Destination discovery with recommendations</li>
+                    <li>Hotel and flight booking integration</li>
+                    <li>Itinerary planner with day-by-day scheduling</li>
+                    <li>Offline functionality for travelers</li>
+                    <li>Social sharing of travel plans</li>
+                </ul>
+                
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <a href="https://github.com" target="_blank" class="btn">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <a href="https://demo-travelapp.com" target="_blank" class="btn btn-accent">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="projectModal3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Task Management System</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Task Manager" class="modal-image">
+                <h4>Project Overview</h4>
+                <p>A collaborative task management system designed for teams to organize projects, assign tasks, and track progress in real-time. Features include drag-and-drop functionality, notifications, and comprehensive reporting.</p>
+                
+                <h4>Technologies Used</h4>
+                <ul>
+                    <li>Vue.js for the frontend framework</li>
+                    <li>Node.js with Express for the backend</li>
+                    <li>Socket.io for real-time updates</li>
+                    <li>PostgreSQL for data storage</li>
+                    <li>Docker for containerization</li>
+                </ul>
+                
+                <h4>Key Features</h4>
+                <ul>
+                    <li>Real-time collaboration and updates</li>
+                    <li>Drag-and-drop task management</li>
+                    <li>Progress tracking with charts and reports</li>
+                    <li>Team and individual task assignments</li>
+                    <li>File attachments and comments on tasks</li>
+                </ul>
+                
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <a href="https://github.com" target="_blank" class="btn">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <a href="https://demo-taskmanager.com" target="_blank" class="btn btn-accent">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tourism Website Modal -->
+    <div id="projectModal4" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Modern Tourism Website</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80" alt="Tourism Website" class="modal-image">
+                <h4>Project Overview</h4>
+                <p>A fully responsive tourism website designed to showcase destinations and provide booking functionality. This project features a modern design with user authentication, booking system, and interactive destination exploration.</p>
+                
+                <h4>Technologies Used</h4>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>Responsive Design</li>
+                    <li>LocalStorage for user data</li>
+                    <li>Font Awesome Icons</li>
+                    <li>Google Fonts</li>
+                </ul>
+                
+                <h4>Key Features</h4>
+                <ul>
+                    <li>User registration and login system</li>
+                    <li>Interactive destination booking</li>
+                    <li>Responsive design for all devices</li>
+                    <li>User dashboard with booking history</li>
+                    <li>Search and filter destinations</li>
+                    <li>Modern UI with smooth animations</li>
+                </ul>
+                
+                <h4>GitHub Repository</h4>
+                <p>This project is hosted on GitHub and includes all source code and documentation.</p>
+                
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <a href="https://github.com/23-40506/Tourism-Web-Site.git" target="_blank" class="btn">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <a href="#" class="btn btn-accent" id="tourDemoBtn">
+                        <i class="fas fa-external-link-alt"></i> View Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- E-commerce Project Modal -->
+    <div id="projectModal5" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>E-commerce Platform</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="E-commerce Website" class="modal-image">
+                <h4>Project Overview</h4>
+                <p>A complete e-commerce website with product management, shopping cart functionality, and user authentication. This project demonstrates front-end development skills with a focus on user experience and functionality.</p>
+                
+                <h4>Technologies Used</h4>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript</li>
+                    <li>LocalStorage for cart management</li>
+                    <li>Responsive Web Design</li>
+                    <li>Product filtering and sorting</li>
+                    <li>Form validation</li>
+                </ul>
+                
+                <h4>Key Features</h4>
+                <ul>
+                    <li>Product catalog with categories</li>
+                    <li>Shopping cart with add/remove functionality</li>
+                    <li>User authentication system</li>
+                    <li>Product search and filter</li>
+                    <li>Checkout process</li>
+                    <li>Order history and tracking</li>
+                </ul>
+                
+                <h4>GitHub Repository</h4>
+                <p>This project showcases front-end development skills and is available on GitHub with complete source code.</p>
+                
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <a href="https://github.com/23-40506/E-commerce.git" target="_blank" class="btn">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <a href="#" class="btn btn-accent" id="ecomDemoBtn">
+                        <i class="fas fa-external-link-alt"></i> View Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Call Modal -->
+    <div id="scheduleCallModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Schedule a Call</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Let's discuss your project! Please select a preferred date and time for our call.</p>
+                
+                <form id="scheduleForm">
+                    <div class="form-group">
+                        <label for="callName">Your Name</label>
+                        <input type="text" id="callName" class="form-control" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="callEmail">Your Email</label>
+                        <input type="email" id="callEmail" class="form-control" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="callDate">Preferred Date</label>
+                        <input type="date" id="callDate" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="callTime">Preferred Time</label>
+                        <select id="callTime" class="form-control" required>
+                            <option value="">Select a time</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="callTopic">Discussion Topic</label>
+                        <textarea id="callTopic" class="form-control" placeholder="What would you like to discuss?" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-accent">Schedule Call</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navList = document.querySelector('.nav-list');
+
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            hamburger.querySelector('i').classList.toggle('fa-bars');
+            hamburger.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-list a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                hamburger.querySelector('i').classList.add('fa-bars');
+                hamburger.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Show success message
+            alert(`Thank you for your message, ${name}! I'll get back to you soon at ${email}.`);
+            
+            // In a real application, you would send this data to a server
+            // For example: fetch('/api/contact', { method: 'POST', body: JSON.stringify({name, email, subject, message}) })
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Project Modal Functionality
+        const viewProjectButtons = document.querySelectorAll('.view-project-btn');
+        const modals = document.querySelectorAll('.modal');
+        const closeModalButtons = document.querySelectorAll('.close-modal');
+        
+        viewProjectButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const projectId = button.getAttribute('data-project');
+                const modal = document.getElementById(`projectModal${projectId}`);
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Schedule Call Button
+        const scheduleCallBtn = document.getElementById('scheduleCallBtn');
+        const scheduleCallModal = document.getElementById('scheduleCallModal');
+        
+        scheduleCallBtn.addEventListener('click', () => {
+            scheduleCallModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Schedule Call Form Submission
+        const scheduleForm = document.getElementById('scheduleForm');
+        scheduleForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('callName').value;
+            const email = document.getElementById('callEmail').value;
+            const date = document.getElementById('callDate').value;
+            const time = document.getElementById('callTime').value;
+            const topic = document.getElementById('callTopic').value;
+            
+            alert(`Thank you, ${name}! Your call has been scheduled for ${date} at ${time}. A confirmation email has been sent to ${email}.`);
+            
+            scheduleForm.reset();
+            scheduleCallModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking close button
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.closest('.modal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Close modal when clicking outside
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Set minimum date for schedule call to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('callDate').setAttribute('min', today);
+        
+        // Download Resume functionality
+        document.querySelectorAll('.download-resume-btn').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Resume download started! In a real application, this would download a PDF resume.');
+                
+                // Simulate download
+                // const blob = new Blob(['Resume content would be here'], {type: 'application/pdf'});
+                // const url = window.URL.createObjectURL(blob);
+                // const a = document.createElement('a');
+                // a.href = url;
+                // a.download = 'Carlo_Ronquillo_Resume.pdf';
+                // document.body.appendChild(a);
+                // a.click();
+                // window.URL.revokeObjectURL(url);
+                // document.body.removeChild(a);
+            });
+        });
+        
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+        
+        // Initialize skill bars animation
+        window.addEventListener('load', () => {
+            setTimeout(animateSkillBars, 500);
+        });
+        
+        // Demo buttons for new projects
+        document.getElementById('tourDemoBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Tourism Website Demo: This would open the live demo of the tourism website. Since this is a GitHub repository, you can clone and run it locally to see the full functionality.');
+        });
+        
+        document.getElementById('ecomDemoBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('E-commerce Platform Demo: This would open the live demo of the e-commerce website. The complete source code is available on GitHub for you to explore and run locally.');
+        });
+        
+        // Update GitHub link in hero section to your actual GitHub
+        document.querySelector('.social-links a[href*="github"]').href = 'https://github.com/23-40506';
+    </script>
+</body>
+</html>
